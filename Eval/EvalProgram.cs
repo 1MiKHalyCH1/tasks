@@ -21,9 +21,6 @@ namespace EvalTask
 
         public static string EvaluateStringExpression(string expression)
         {
-            expression = expression.Replace("-", " - ");
-            expression = expression.Replace(",", ".");
-            expression = expression.Replace("'", "");
             var compiledExpression = new CompiledExpression(expression);
             var result = compiledExpression.Eval();
             return result.ToString();
@@ -32,9 +29,6 @@ namespace EvalTask
 
         public static string EvaluateStringExpression(string expression, Dictionary<string, string> variablesDictionary)
         {
-            expression = expression.Replace("-", " - ");
-            expression = expression.Replace(",", ".");
-            expression = expression.Replace("'", "");
             foreach (var v in variablesDictionary.OrderByDescending(x => x.Key.Length))
             {
                 expression = expression.Replace(v.Key, v.Value);
@@ -65,12 +59,9 @@ namespace EvalTask
                 var input = Console.In.ReadToEnd().Split('\n');
 
                 string expression = input[0];
-
-
                 expression = expression.Replace("-", " - ");
                 expression = expression.Replace(",", ".");
                 expression = expression.Replace("'", "");
-
                 var jsonInput = String.Join("\n", input.Skip(1).ToArray());
                 if (jsonInput == "")
                     jsonInput = "{}";
