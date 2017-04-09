@@ -11,8 +11,8 @@ namespace SimQLTask
 	{
 		static void Main(string[] args)
 		{
-            //var json = Console.In.ReadToEnd();
-		    var json = "{'data':{'a':{'x':3.14,'b':{'c':15},'c':{'c':9}},'z':42},'queries':['a.b.c','z','a.x']}";
+            var json = Console.In.ReadToEnd();
+            //var json = "{'data':{'a':{'x':3.14,'b':{'c':15},'c':{'c':9}},'z':42},'queries':['a.b.c','z','a.x']}";
             foreach (var result in ExecuteQueries(json))
 				Console.WriteLine(result);
 		}
