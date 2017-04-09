@@ -5,7 +5,7 @@
 		'1': {
 			'name': 'product-name',
 			'price': '3 + a + b',
-			'count': 100,
+			'count': 100
 		}
 	}
 }
