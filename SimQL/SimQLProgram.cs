@@ -35,7 +35,7 @@ namespace SimQLTask
             }
             catch
             {
-                return $"{query} = ";
+                return $"{query}";
             }
         }
     }
