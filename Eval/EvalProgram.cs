@@ -71,7 +71,8 @@ namespace EvalTask
                 var variables = GetVariablesFromExpression(expression);
                 var dictionary = GetDictionaryWihVariablesFromJson(jObject, variables);
                 var result = EvaluateStringExpression(expression, dictionary);
-                var answer = result == "?" ? "error":result;
+                double f;
+                var answer = Double.TryParse(result, out f) ? "error":result;
                 Console.WriteLine(result);
             }
             catch
