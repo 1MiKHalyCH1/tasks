@@ -56,25 +56,27 @@ namespace EvalTask
 
         static void Main(string[] args)
         {
-            var input = Console.In.ReadToEnd().Split('\n');
-
-            string expression = input[0];
-
-            if (expression == "12 12")
+            try
             {
-                Console.WriteLine("12");
-                return;
-            }
+                var input = Console.In.ReadToEnd().Split('\n');
 
-            var jsonInput = String.Join("\n", input.Skip(1).ToArray());
-            if (jsonInput == "")
-                jsonInput = "{}";
-            //var jsonInput = "{'a':50, 'b':45}";
-            var jObject =  JObject.Parse(jsonInput);
-            var variables = GetVariablesFromExpression(expression);
-            var dictionary = GetDictionaryWihVariablesFromJson(jObject, variables);
-            var result = EvaluateStringExpression(expression,dictionary);
-            Console.WriteLine(result);
+                string expression = input[0];
+
+
+                var jsonInput = String.Join("\n", input.Skip(1).ToArray());
+                if (jsonInput == "")
+                    jsonInput = "{}";
+                //var jsonInput = "{'a':50, 'b':45}";
+                var jObject = JObject.Parse(jsonInput);
+                var variables = GetVariablesFromExpression(expression);
+                var dictionary = GetDictionaryWihVariablesFromJson(jObject, variables);
+                var result = EvaluateStringExpression(expression, dictionary);
+                Console.WriteLine(result);
+            }
+            catch
+            {
+                Console.WriteLine("error");
+            }
         }
     }
 }
