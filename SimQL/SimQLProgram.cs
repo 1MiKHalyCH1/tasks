@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace SimQLTask
 {
-	class SimQLProgram
+	public class SimQLProgram
 	{
 		static void Main(string[] args)
 		{

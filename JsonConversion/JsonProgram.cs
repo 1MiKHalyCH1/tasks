@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace JsonConversion
 {
-	class JsonProgram
+	public class JsonProgram
 	{
 		static void Main()
 		{
