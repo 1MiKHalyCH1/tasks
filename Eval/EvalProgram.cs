@@ -67,6 +67,10 @@ namespace EvalTask
                 string expression = input[0];
 
 
+                expression = expression.Replace("-", " - ");
+                expression = expression.Replace(",", ".");
+                expression = expression.Replace("'", "");
+
                 var jsonInput = String.Join("\n", input.Skip(1).ToArray());
                 if (jsonInput == "")
                     jsonInput = "{}";
