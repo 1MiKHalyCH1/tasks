@@ -8,11 +8,21 @@ namespace EvalTask
 		static void Main(string[] args)
 		{
             //string input = Console.In.ReadToEnd();
-		    string input = Console.ReadLine();
-		    input = input.Replace("-", " - ");
-            var expresion = new CompiledExpression(input);
-		    var output = expresion.Eval();
-			Console.WriteLine(output);
+		    string expresionInput = Console.ReadLine();
+		    expresionInput = expresionInput.Replace("-", " - ");
+
+		    var variables = expresionInput.Split(new char[] {' ', '+', '-', '*', '/', '(', ')', '{', '}',',','.'}, StringSplitOptions.RemoveEmptyEntries);
+
+		  //  var json = Console.In.ReadToEnd();
+		    var json = @"{
+		    a: 5
+		}";
+		    foreach (var result in SimQLProgram.SimQLProgram.ExecuteQueries(json))
+		        Console.WriteLine(result);
+
+          //  var expresion = new CompiledExpression(expresionInput);
+		 //   var output = expresion.Eval();
+		//	Console.WriteLine(output);
 		}
 	}
 }

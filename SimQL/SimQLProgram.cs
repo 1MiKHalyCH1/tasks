@@ -5,9 +5,9 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace SimQLTask
+namespace SimQLProgram
 {
-	class SimQLProgram
+	public class SimQLProgram
 	{
 		static void Main(string[] args)
 		{
