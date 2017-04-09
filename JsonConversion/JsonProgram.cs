@@ -21,7 +21,7 @@ namespace JsonConversion
 		        _products.Add(obj);
 		    }
             var bv3 = new JObject(
-                new JProperty("version", 3),
+                new JProperty("version", "3"),
                 new JProperty("products",_products)
                 );
 			Console.Write(bv3);
