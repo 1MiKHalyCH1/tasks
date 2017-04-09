@@ -26,11 +26,17 @@ namespace JsonConversion
 	            obj.Add("id", int.Parse(key));
 	            _products.Add(obj);
 	        }
-	        var bv3 = new JObject(
-	            new JProperty("version", "3"),
-	            new JProperty("products", _products)
-	        );
-	        return bv3;
+
+	        if (v2["constants"] == null)
+	        {
+	            var bv3 = new JObject(
+	                new JProperty("version", "3"),
+	                new JProperty("products", _products)
+	            );
+
+	            return bv3;
+            }
+	        return null;
 	    }
 	}
 }
