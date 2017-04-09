@@ -17,7 +17,7 @@ namespace JsonConversion
 		    foreach (var key in products.Keys)
 		    {
 		        var obj = products[key];
-		        obj.Add("id", key);
+		        obj.Add("id", int.Parse(key));
 		        _products.Add(obj);
 		    }
             var bv3 = new JObject(
