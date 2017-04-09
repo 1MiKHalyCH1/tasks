@@ -22,19 +22,21 @@ namespace SimQLTask
 			var data = (JObject)jObject["data"];
 			var queries = jObject["queries"].ToObject<string[]>();
 
-
-
-		    var res =
-		        queries
+		    return queries
 		            .Select(q => ExecuteQuery(data, q));
-                    
-		    return res;
 		}
 
         private static string ExecuteQuery(JObject data, string query)
         {
-            var token = data.SelectToken(query).ToString();
-            return $"{query} = {token}";
+            try
+            {
+                var token = data.SelectToken(query).ToString();
+                return $"{query} = {token}";
+            }
+            catch
+            {
+                return $"{query} = ";
+            }
         }
     }
 }
