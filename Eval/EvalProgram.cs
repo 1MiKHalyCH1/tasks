@@ -11,7 +11,7 @@ namespace EvalTask
 
         public static string[] GetVariablesFromExpression(string expression)
         {
-            return expression.Split(new char[] {' ', '+', '-', '*', '/', '(', ')', '{', '}', ',', '.','1','2','3','4','5','6','7','8','9','0'},
+            return expression.Split(new char[] {' ', '+', '-', '*', '/', '(', ')', '{', '}', ',', '.','1','2','3','4','5','6','7','8','9','0', '\r'},
                     StringSplitOptions.RemoveEmptyEntries)
                 .Distinct()
                 .ToArray();
