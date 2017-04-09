@@ -23,6 +23,7 @@ namespace EvalTask
         {
             expression = expression.Replace("-", " - ");
             expression = expression.Replace(",", ".");
+            expression = expression.Replace("'", "");
             var compiledExpression = new CompiledExpression(expression);
             var result = compiledExpression.Eval();
             return result.ToString();
@@ -33,6 +34,7 @@ namespace EvalTask
         {
             expression = expression.Replace("-", " - ");
             expression = expression.Replace(",", ".");
+            expression = expression.Replace("'", "");
             foreach (var v in variablesDictionary.OrderByDescending(x => x.Key.Length))
             {
                 expression = expression.Replace(v.Key, v.Value);
